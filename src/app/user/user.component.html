@@ -1,0 +1,38 @@
+<div>
+    <h2>User Component {{title}}</h2>
+
+    <h2>
+        <ng-content select="header"></ng-content>
+    </h2>
+    <p>
+        <ng-content select =".main-class"></ng-content>
+    </p>
+
+
+Child Control :
+ <input type="text" (keyup)="onKeyUp(childControl.value)" #childControl>
+
+
+    <div class="container">
+    <ul class="list-unstyled">
+    <li class="well">
+        <img [src]="user.image" class="image-response img-circle"/>
+        <button (click)="moreInfo(user)" class="btn btn-primary btn-sm">More Info</button>
+    <h1 class ="text-center text-primary">
+        {{user.firstname}} {{user.lastname}}
+    </h1>
+    <p> Income : <span [innerHTML]="user.income"></span></p>
+    <em>Total Votes : {{user.vote}}</em>
+    <input type="number"
+    [value]="user.vote"
+    (change)="user.vote=$event.target.value">
+
+    <input type="number" [(ngModel)]="user.vote">
+    </li>
+    </ul>
+    </div>
+    
+</div>
+<h2>
+    <ng-content select="footer"></ng-content>
+</h2>
