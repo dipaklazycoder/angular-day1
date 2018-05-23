@@ -40,6 +40,11 @@ Child Control :
 </div>
 </div>
     
+<div [ngSwitch]="'1'">
+    <div *ngSwitchCase="'1'"> Switch case Output 1</div>
+    <div *ngSwitchDefault>Default case</div>
+    </div>
+
 <h2>
     <ng-content select="footer"></ng-content>
 </h2>
