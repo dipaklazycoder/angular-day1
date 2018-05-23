@@ -1,0 +1,9 @@
+.ng-invalid[type="text"]{
+    border-bottom: 2px red dashed
+}
+.ng-valid[type="text"]{
+    border-bottom: green dashed
+}
+.ng-valid[type="text"]{
+    border-bottom: green dashed
+}
