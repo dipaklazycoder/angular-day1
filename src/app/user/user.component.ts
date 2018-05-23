@@ -1,11 +1,12 @@
-import {Component, Input, Output, EventEmitter } from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnInit, OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, DoCheck, OnDestroy, SimpleChanges } from '@angular/core';
 import {User} from '../model/user';
 
 @Component({
     selector: 'app-user',
     templateUrl:'./user.component.html'
 })
-export class UserComponent {
+export class UserComponent implements OnInit, OnChanges, AfterContentInit,
+AfterContentChecked, AfterViewInit, AfterViewChecked,DoCheck,OnDestroy{
 
     @Input('user')
      user : User;
@@ -25,6 +26,29 @@ export class UserComponent {
     {
         alert('More Info');
     }
+
+    constructor(){
+        console.log("contructor called")
+    }
+    ngOnChanges(changes: SimpleChanges){ 
+        console.log("ngOnChange");
+}
+    ngOnInit(){
+        console.log("ngOnInit");
+        
+    }
+    ngDoCheck(){ console.log("ngDoCheck");
+    
+}
+ngAfterContentInit(){ console.log("ngAfterConyentInit");
+}
+ngAfterContentChecked(){ console.log("ngAfterContentChecked");
+}
+ngAfterViewInit(){ console.log("ngAfterViewInit");
+}
+ngAfterViewChecked(){"ngAfterViewChecked"}
+ngOnDestroy(){ console.log("ngOnDestroy");
+}
     
 
     
