@@ -15,7 +15,7 @@ Child Control :
 
     <div class="container">
     <ul class="list-unstyled">
-    <li class="well">
+    <li class="well" *ngFor="let user of users">
         <img [src]="user.image" class="image-response img-circle"/>
         <button (click)="moreInfo(user)" class="btn btn-primary btn-sm">More Info</button>
     <h1 class ="text-center text-primary">

@@ -8,8 +8,8 @@ import {User} from '../model/user';
 export class UserComponent implements OnInit, OnChanges, AfterContentInit,
 AfterContentChecked, AfterViewInit, AfterViewChecked,DoCheck,OnDestroy{
 
-    @Input('user')
-     user : User;
+    @Input('users')
+     users : User[];
 
      @Input('xyz')
      title : string

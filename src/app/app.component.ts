@@ -15,7 +15,8 @@ parentEvent(eventData)
   this.parentValue = eventData;
 }
 
-  user : User = {
+  users : User[] =[ 
+    {
     firstname:"Bill",
     lastname:"Gates",
     income:10,
@@ -24,5 +25,15 @@ parentEvent(eventData)
     image:'assets/bill.jpg',
     vote:128
     
-}
+},
+{
+  firstname:"Dipak",
+  lastname:"Sharma",
+  income:10,
+  dob: new Date("Sep 18 1989"),
+  isworking:true,
+  image:'assets/bill.jpg',
+  vote:100
+  
+}]
 }
