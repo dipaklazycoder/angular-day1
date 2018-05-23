@@ -1,10 +1,11 @@
-import {Component, Input, Output, EventEmitter, OnInit, OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, DoCheck, OnDestroy, SimpleChanges } from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnInit, OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, DoCheck, OnDestroy, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import {User} from '../model/user';
 
 @Component({
     selector: 'app-user',
     templateUrl:'./user.component.html',
-    styleUrls:[`./user.component.css`]
+    styleUrls:[`./user.component.css`],
+    encapsulation: ViewEncapsulation.None
 })
 export class UserComponent implements OnInit, OnChanges, AfterContentInit,
 AfterContentChecked, AfterViewInit, AfterViewChecked,DoCheck,OnDestroy{

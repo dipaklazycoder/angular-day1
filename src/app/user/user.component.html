@@ -19,7 +19,7 @@ Child Control :
         {{i}} Is Even ? {{isEven}}
         <img [src]="user.image" class="image-response img-circle"/>
         <button (click)="moreInfo(user)" class="btn btn-primary btn-sm">More Info</button>
-    <h1 class ="text-center text-primary">
+    <h1 appHighlight class ="text-center text-primary">
         {{user.firstname}} {{user.lastname}}
     </h1>
     <p [ngClass]="myclasses" [ngStyle]="bgColor">Date of birth: {{user.dob}} </p>
@@ -48,5 +48,5 @@ Child Control :
     </div>
 
 <h2>
-    <ng-content select="footer"></ng-content>
+    <ng-content style="background-color: blue" select="footer"></ng-content>
 </h2>
