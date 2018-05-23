@@ -1,0 +1,25 @@
+
+{
+    "userData":
+    [ 
+    {
+    "firstname":"Bill",
+    "lastname":"Gates",
+    "income":10,
+    "dob": "Dec 12 1965",
+    "isworking":true,
+    "image":"assets/bill.jpg",
+    "vote":128
+    
+},
+{
+  "firstname":"Steve",
+  "lastname":"Jobs",
+  "income":100,
+  "dob": "Sep 18 1989",
+  "isworking":false,
+  "image":"assets/bill.jpg",
+  "vote":100
+  
+}]
+}

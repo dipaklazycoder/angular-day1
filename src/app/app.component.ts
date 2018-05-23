@@ -21,7 +21,9 @@ constructor(public userService : UserService){
 
   users : User[];
   ngOnInit(){
-    this.users = this.userService.getUserData();
+    this.users = this.userService.getUserData()
+    .subscribe((users)=>this.users=users);
+    
   }
 
   increase()

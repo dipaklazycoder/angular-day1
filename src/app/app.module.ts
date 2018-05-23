@@ -12,6 +12,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { SiginComponent } from './sigin/sigin.component';
 import { SigupComponent } from './sigup/sigup.component';
 import { UserService } from './services/user-service';
+import{HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { UserService } from './services/user-service';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule,
+    HttpClientModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
