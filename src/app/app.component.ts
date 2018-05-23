@@ -27,11 +27,11 @@ parentEvent(eventData)
     
 },
 {
-  firstname:"Dipak",
-  lastname:"Sharma",
-  income:10,
+  firstname:"Steve",
+  lastname:"Jobs",
+  income:100,
   dob: new Date("Sep 18 1989"),
-  isworking:true,
+  isworking:false,
   image:'assets/bill.jpg',
   vote:100
   
