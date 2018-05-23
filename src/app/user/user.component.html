@@ -22,6 +22,8 @@ Child Control :
     <h1 class ="text-center text-primary">
         {{user.firstname}} {{user.lastname}}
     </h1>
+    <p [ngClass]="myclasses" [ngStyle]="bgColor">Date of birth: {{user.dob}} </p>
+    
     <p *ngIf="user.isworking; else ElseTemplate"> Income : <span [innerHTML]="user.income"></span></p>
     <em>Total Votes : {{user.vote}}</em>
     <input type="number"

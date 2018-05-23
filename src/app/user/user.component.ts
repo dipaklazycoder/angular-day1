@@ -3,7 +3,8 @@ import {User} from '../model/user';
 
 @Component({
     selector: 'app-user',
-    templateUrl:'./user.component.html'
+    templateUrl:'./user.component.html',
+    styleUrls:[`./user.component.css`]
 })
 export class UserComponent implements OnInit, OnChanges, AfterContentInit,
 AfterContentChecked, AfterViewInit, AfterViewChecked,DoCheck,OnDestroy{
@@ -13,6 +14,15 @@ AfterContentChecked, AfterViewInit, AfterViewChecked,DoCheck,OnDestroy{
 
      @Input('xyz')
      title : string
+
+     myclasses : any = {
+         'dob': true,
+         'feature':false
+     }
+
+     bgColor = {
+         backgroundColor : 'gray'
+     }
 
      @Output('childEvent') childEvent = new EventEmitter<string>();
 
