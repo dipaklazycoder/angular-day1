@@ -11,6 +11,7 @@ import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SiginComponent } from './sigin/sigin.component';
 import { SigupComponent } from './sigup/sigup.component';
+import { UserService } from './services/user-service';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { SigupComponent } from './sigup/sigup.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

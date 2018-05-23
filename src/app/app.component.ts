@@ -1,39 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from './model/user';
+import { UserService } from './services/user-service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
   parentValue : string;
 
-parentEvent(eventData)
+constructor(public userService : UserService){
+
+}
+  parentEvent(eventData)
 {
   this.parentValue = eventData;
 }
 
-  users : User[] =[ 
-    {
-    firstname:"Bill",
-    lastname:"Gates",
-    income:10,
-    dob: new Date("Dec 12 1965"),
-    isworking:true,
-    image:'assets/bill.jpg',
-    vote:128
-    
-},
-{
-  firstname:"Steve",
-  lastname:"Jobs",
-  income:100,
-  dob: new Date("Sep 18 1989"),
-  isworking:false,
-  image:'assets/bill.jpg',
-  vote:100
-  
-}]
+  users : User[];
+  ngOnInit(){
+    this.users = this.userService.getUserData();
+  }
+
+  increase()
+  {
+    this.userService.counter=this.userService.counter+1;
+  }
 }

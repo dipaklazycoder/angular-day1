@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { UserService } from '../services/user-service';
 
 @Component({
   selector: 'app-sigup',
   templateUrl: './sigup.component.html',
-  styleUrls: ['./sigup.component.css']
+  styleUrls: ['./sigup.component.css'],
+  providers:[UserService]
 })
 export class SigupComponent implements OnInit {
 
@@ -17,7 +19,8 @@ export class SigupComponent implements OnInit {
     this.hasExclamation
   ]);
   registerForm : FormGroup;
-  constructor(private fb : FormBuilder) {
+  constructor(private fb : FormBuilder,
+  public userService : UserService) {
     this.registerForm = this.fb.group({
     username: this.username,
     password: this.password
@@ -36,4 +39,8 @@ export class SigupComponent implements OnInit {
   {
     console.log(this.registerForm);
   }
+  increase(){
+    this.userService.counter++;
+  }
+
 }
