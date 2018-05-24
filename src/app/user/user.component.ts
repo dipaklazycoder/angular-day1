@@ -41,25 +41,25 @@ import {User} from '../model/user';
     constructor(){
         console.log("contructor called")
     }
-//     ngOnChanges(changes: SimpleChanges){ 
-//         console.log("ngOnChange");
-// }
-//     ngOnInit(){
-//         console.log("ngOnInit");
+    ngOnChanges(changes: SimpleChanges){ 
+        console.log("ngOnChange");
+}
+    ngOnInit(){
+        console.log("ngOnInit");
         
-//     }
-//     ngDoCheck(){ console.log("ngDoCheck");
+    }
+    ngDoCheck(){ console.log("ngDoCheck");
     
-// }
-// ngAfterContentInit(){ console.log("ngAfterConyentInit");
-// }
-// ngAfterContentChecked(){ console.log("ngAfterContentChecked");
-// }
-// ngAfterViewInit(){ console.log("ngAfterViewInit");
-// }
-// ngAfterViewChecked(){"ngAfterViewChecked"}
-// ngOnDestroy(){ console.log("ngOnDestroy");
-// }
+}
+ngAfterContentInit(){ console.log("ngAfterConyentInit");
+}
+ngAfterContentChecked(){ console.log("ngAfterContentChecked");
+}
+ngAfterViewInit(){ console.log("ngAfterViewInit");
+}
+ngAfterViewChecked(){"ngAfterViewChecked"}
+ngOnDestroy(){ console.log("ngOnDestroy");
+}
     
 
     
