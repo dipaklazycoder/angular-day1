@@ -26,11 +26,11 @@ private router: Router){
 
     getApiData()
     {
-        this.httpClient.get<User[]>("https://sg-test-ca4f8.firebaseio.com/userData.json",{
+        return this.httpClient.get<User[]>("https://sg-test-ca4f8.firebaseio.com/userData.json",{
             // params : new HttpParams().set("auth", this.getToken()),
                              
-             })
-             .subscribe(data=>console.log(data));
+             });
+            
 
 
         // return this.http.get("https://sg-test-ca4f8.firebaseio.com/userData.json")
@@ -69,7 +69,7 @@ private router: Router){
                 console.log(token)
                 this.token=token})
         .catch(err=>console.log(err))
-        this.router.navigate(['pipe'])
+
     });
 }
 

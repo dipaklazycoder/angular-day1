@@ -28,7 +28,11 @@ constructor(public userService : UserService){
    });
     this.users = this.userService.getUserData()
     .subscribe((users)=>this.users=users);
-    this.userService.getApiData();
+    // this.userService.getApiData().subscribe(data=>
+    //   {
+    //     this.users = data
+    //     console.log(data)
+    //   });
     
     
   }
