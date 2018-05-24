@@ -11,8 +11,9 @@ export class ObservableDemoComponent implements OnInit {
 
  num: number;
  data : number;
+ unsubscribe: any;
   constructor() { 
-    Observable.interval(1000).subscribe((num)=>this.num=num);
+   this.unsubscribe= Observable.interval(1000).subscribe((num)=>this.num=num);
     console.log(this.num);
 
     Observable.create((observer)=>{
@@ -43,4 +44,7 @@ export class ObservableDemoComponent implements OnInit {
   ngOnInit() {
   }
 
+  unsubscribeData(){
+    this.unsubscribe.unsubscribe();
+  }
 }
