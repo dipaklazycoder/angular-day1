@@ -23,8 +23,8 @@ constructor(public userService : UserService){
   ngOnInit(){
 
    firebase.initializeApp({
-     apiKey:"AIzaSyDVfB2r7aKUpK_UeOloqWWhRoljo7NXc8s",
-     authDomain:"sg-test-ca4f8.firebaseapp.com"
+     apiKey:"AIzaSyDVfB2r7aKUpK_UeOloqWWhRoljo7NXc8",
+     authDomain:"sg1-test-ca4f8.firebaseapp.com"
    });
     this.users = this.userService.getUserData()
     .subscribe((users)=>this.users=users);
