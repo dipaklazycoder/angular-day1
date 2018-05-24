@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './model/user';
 import { UserService } from './services/user-service';
-
+import * as firebase from 'firebase'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,8 +21,15 @@ constructor(public userService : UserService){
 
   users : User[];
   ngOnInit(){
+
+   firebase.initializeApp({
+     apiKey:"AIzaSyDVfB2r7aKUpK_UeOloqWWhRoljo7NXc8s",
+     authDomain:"sg-test-ca4f8.firebaseapp.com"
+   });
     this.users = this.userService.getUserData()
     .subscribe((users)=>this.users=users);
+    this.userService.getApiData();
+    
     
   }
 

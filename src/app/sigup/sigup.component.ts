@@ -37,6 +37,7 @@ export class SigupComponent implements OnInit {
 
   register()
   {
+    this.userService.register(this.registerForm.value.username, this.registerForm.value.password);
     console.log(this.registerForm);
   }
   increase(){
