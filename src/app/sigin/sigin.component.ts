@@ -20,4 +20,9 @@ export class SiginComponent implements OnInit {
     console.log(form);
   }
 
+  getData()
+  {
+    this.userService.getUserData();
+  }
+
 }

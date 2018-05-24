@@ -4,12 +4,15 @@ import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {User} from '../model/user';
 import * as firebase from 'firebase';
+import { HttpClient, HttpParams, HttpHeaders} from '@angular/common/http'
 @Injectable()
 export class UserService{
 
    public counter : number = 0;
+   token: string;
 
-   constructor(private http: Http){
+   constructor(private http: Http,
+private httpClient : HttpClient){
 
    }
     getUserData():any {
@@ -21,10 +24,27 @@ export class UserService{
 
     getApiData()
     {
-        
-        return this.http.get("https://sg-test-ca4f8.firebaseio.com/userData.json")
-        .map(response=>response)
-        .subscribe((data)=>console.log(data));
+        this.httpClient.get<User[]>("https://sg-test-ca4f8.firebaseio.com/userData.json",{
+            // params : new HttpParams().set("auth", this.getToken()),
+                             
+             })
+             .subscribe(data=>console.log(data));
+
+
+        // return this.http.get("https://sg-test-ca4f8.firebaseio.com/userData.json")
+        // .map(response=>response)
+        // .subscribe((data)=>console.log(data));
+
+    //     this.httpClient.get("https://sg-test-ca4f8.firebaseio.com/userData.json+auth?="+
+    // this.getToken())
+    // .subscribe(response=>console.log(response));
+
+    // this.httpClient.get("https://sg-test-ca4f8.firebaseio.com/userData.json",{
+    // params: new HttpParams().set("auth", this.getToken()),
+    // headers: new HttpHeaders().set()
+    // })
+    // .subscribe(response=>console.log(response));
+ 
  
     }
 
@@ -41,7 +61,16 @@ export class UserService{
 
         firebase.auth()
         .signInWithEmailAndPassword(email,password)
-        .then(response=>console.log(response))
+        .then(response=>{
+            firebase.auth().currentUser.getIdToken()
+            .then(token=>{ 
+                console.log(token)
+                this.token=token})
         .catch(err=>console.log(err))
+    });
+}
+
+    getToken(){
+        return this.token;
     }
 }

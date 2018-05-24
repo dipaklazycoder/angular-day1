@@ -13,33 +13,33 @@ export class ObservableDemoComponent implements OnInit {
  data : number;
  unsubscribe: any;
   constructor() { 
-   this.unsubscribe= Observable.interval(1000).subscribe((num)=>this.num=num);
-    console.log(this.num);
+   //this.unsubscribe= Observable.interval(1000).subscribe((num)=>this.num=num);
+   // console.log(this.num);
 
-    Observable.create((observer)=>{
-      setTimeout(()=>{
-        observer.next(100)},1000)
+  //   Observable.create((observer)=>{
+  //     setTimeout(()=>{
+  //       observer.next(100)},1000)
 
-        setTimeout(()=>{
-          observer.next(200)},2000)
+  //       setTimeout(()=>{
+  //         observer.next(200)},2000)
 
-          setTimeout(()=>{
-            observer.next(300)},3000)
+  //         setTimeout(()=>{
+  //           observer.next(300)},3000)
     
-            setTimeout(()=>{
-              observer.complete()},4000)
+  //           setTimeout(()=>{
+  //             observer.complete()},4000)
       
-              setTimeout(()=>{
-                observer.next(400)},5000)
+  //             setTimeout(()=>{
+  //               observer.next(400)},5000)
         
 
                
 
-      }).subscribe((data)=>this.data = data,
-      (err)=>console.log('Error',err),
-      ()=>console.log('completed')
-    )
-  }
+  //     }).subscribe((data)=>this.data = data,
+  //     (err)=>console.log('Error',err),
+  //     ()=>console.log('completed')
+  //   )
+   }
 
   ngOnInit() {
   }

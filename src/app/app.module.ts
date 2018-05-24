@@ -13,8 +13,10 @@ import { SiginComponent } from './sigin/sigin.component';
 import { SigupComponent } from './sigup/sigup.component';
 import { UserService } from './services/user-service';
 import{HttpModule} from '@angular/http';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
+import { AuthInterceptor } from './services/auth-interceptor';
+import { LoggerInterceptor } from './services/logger-interceptor';
 
 
 @NgModule({
@@ -35,7 +37,18 @@ import { ObservableDemoComponent } from './observable-demo/observable-demo.compo
     HttpModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [UserService,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi:true
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoggerInterceptor,
+    multi:true
+  }],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
