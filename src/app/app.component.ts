@@ -32,7 +32,10 @@ constructor(public userService : UserService){
     
     
   }
-
+  signout()
+  {
+    this.userService.signOut();
+  }
   increase()
   {
     this.userService.counter=this.userService.counter+1;

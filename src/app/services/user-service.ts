@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import {User} from '../model/user';
 import * as firebase from 'firebase';
 import { HttpClient, HttpParams, HttpHeaders} from '@angular/common/http'
+import { Router} from '@angular/router';
 @Injectable()
 export class UserService{
 
@@ -12,7 +13,8 @@ export class UserService{
    token: string;
 
    constructor(private http: Http,
-private httpClient : HttpClient){
+private httpClient : HttpClient,
+private router: Router){
 
    }
     getUserData():any {
@@ -67,10 +69,20 @@ private httpClient : HttpClient){
                 console.log(token)
                 this.token=token})
         .catch(err=>console.log(err))
+        this.router.navigate(['pipe'])
     });
 }
 
     getToken(){
         return this.token;
+    }
+
+    isAuthenticated()
+    {
+        return this.token!=null;
+    }
+    signOut(){
+        firebase.auth().signOut();
+        this.token=null;
     }
 }

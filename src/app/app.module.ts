@@ -17,6 +17,9 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 import { AuthInterceptor } from './services/auth-interceptor';
 import { LoggerInterceptor } from './services/logger-interceptor';
+import {RouterModule} from '@angular/router'
+import { APP_ROUTES } from './app.routing';
+import { LoginGuardService } from './services/login-guard-service';
 
 
 @NgModule({
@@ -35,9 +38,10 @@ import { LoggerInterceptor } from './services/logger-interceptor';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES)
   ],
-  providers: [UserService,
+  providers: [UserService,LoginGuardService,
   {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,

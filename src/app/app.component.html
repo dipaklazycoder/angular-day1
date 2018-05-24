@@ -6,15 +6,32 @@
     <button (click)="increase()">Increase</button>
   </h1>
 
-  <!-- <div class="container">
-    <app-observable-demo></app-observable-demo>
-  </div> -->
-  
 <div class="container">
-  <app-sigup></app-sigup>
+
+<li><a [routerLink]="['pipe']">Home</a></li>
+<li *ngIf="!userService.isAuthenticated()"><a [routerLink]="['sigin']">Login</a></li>
+<li *ngIf="!userService.isAuthenticated()"><a [routerLink]="['signup']">Register</a></li>
+<li *ngIf="userService.isAuthenticated()"><a (click)="signout()">Logout</a></li>
+<li><a [routerLink]="['obsdemo']">ObsDemo</a></li>
+
+
+
 </div>
 
-  <app-sigin></app-sigin>
+  <div class="container">
+  <router-outlet></router-outlet>
+   </div>
+
+
+  <div class="container">
+    <!-- <app-observable-demo></app-observable-demo> -->
+  </div>
+  
+<div class="container">
+  <!-- <app-sigup></app-sigup> -->
+</div>
+
+  <!-- <app-sigin></app-sigin> -->
  <app-user [users]="users" [xyz]="title" (childEvent)="parentEvent($event)">
  <header>Header Info</header>
  <main class="main-class">Main Contents...</main>

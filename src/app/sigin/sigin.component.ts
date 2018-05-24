@@ -18,6 +18,7 @@ export class SiginComponent implements OnInit {
   sigin(form: NgForm){
     this.userService.login(form.value.username,form.value.password)
     console.log(form);
+    form.resetForm();
   }
 
   getData()
