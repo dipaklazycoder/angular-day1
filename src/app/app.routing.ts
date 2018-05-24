@@ -4,14 +4,11 @@ import { SigupComponent } from './sigup/sigup.component';
 import { SiginComponent } from './sigin/sigin.component';
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 import { LoginGuardService} from './services/login-guard-service';
+import { ProductComponent } from './product/product/product.component';
+import { OverviewComponent } from './product/overview/overview.component';
 
 export const APP_ROUTES : Routes = [
-    {
-        path:"pipe",
-        redirectTo: 'pipe',
-        pathMatch : 'full'
-        
-    },
+    
     {
         path:"pipe",
         component: PipeDemoComponent,
@@ -32,6 +29,23 @@ export const APP_ROUTES : Routes = [
         component: ObservableDemoComponent,
         canActivate : [LoginGuardService]
         
-    }
+    },
+    {
+        path:"product",
+        component: ProductComponent,
+        
+        
+    },
+    {
+        path:"overview",
+        component: OverviewComponent,
+        
+    },
+    {
+        path:"**",
+        redirectTo: 'pipe',
+        pathMatch : 'full'
+
+    },
 
 ]

@@ -20,6 +20,7 @@ import { LoggerInterceptor } from './services/logger-interceptor';
 import {RouterModule} from '@angular/router'
 import { APP_ROUTES } from './app.routing';
 import { LoginGuardService } from './services/login-guard-service';
+import { ProductModule} from "./product/product.module";
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { LoginGuardService } from './services/login-guard-service';
   ],
   imports: [
     BrowserModule,
+    ProductModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,

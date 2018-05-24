@@ -9,6 +9,7 @@
 <div class="container">
 
 <li><a [routerLink]="['pipe']">Home</a></li>
+<li><a [routerLink]="['product']">Product</a></li>
 <li *ngIf="!userService.isAuthenticated()"><a [routerLink]="['sigin']">Login</a></li>
 <li *ngIf="!userService.isAuthenticated()"><a [routerLink]="['signup']">Register</a></li>
 <li *ngIf="userService.isAuthenticated()"><a (click)="signout()">Logout</a></li>
