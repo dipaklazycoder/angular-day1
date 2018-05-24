@@ -14,6 +14,7 @@ import { SigupComponent } from './sigup/sigup.component';
 import { UserService } from './services/user-service';
 import{HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
+import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {HttpClientModule} from '@angular/common/http';
     PipeDemoComponent,
     FilterPipe,
     SiginComponent,
-    SigupComponent
+    SigupComponent,
+    ObservableDemoComponent
   ],
   imports: [
     BrowserModule,
